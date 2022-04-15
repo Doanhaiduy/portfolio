@@ -44,6 +44,7 @@ body {
     flex-direction: column;
     align-items: center;
     user-select: none;
+    text-align: center;
 }
 
 .card__img:hover::before {
@@ -58,9 +59,10 @@ body {
     top: -40px;
     background-repeat: no-repeat;
     background-size: cover;
+    /* background-image: url(https://inkythuatso.com/uploads/thumbnails/800/2022/03/meo-cam-bong-hoa-tren-tay-manh-me-len-23-09-00-15.jpg); */
     /* background-image: url(https://images.pexels.com/photos/3777622/pexels-photo-3777622.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1); */
     background-image: url(https://images.pexels.com/photos/9718154/pexels-photo-9718154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
-/*     background-image: url(https://inkythuatso.com/uploads/thumbnails/800/2022/03/meo-cam-bong-hoa-tren-tay-manh-me-len-23-09-00-15.jpg) */
+
 }
 
 .card__img {
@@ -90,9 +92,11 @@ body {
     border-right: 5px rgb(254, 1, 1) solid;
     border-bottom: 5px rgb(254, 1, 237) solid;
     animation: ani infinite 0.9s linear;
+
     margin-top: 40px;
     transition: 0.3s linear;
 }
+
 
 .card__description {
     text-align: center;
@@ -119,7 +123,6 @@ body {
 
 .instagram {
     transition: background 0.3s linear;
-
 }
 
 .card__icon i:hover {
@@ -135,13 +138,24 @@ body {
     font-weight: 600;
     font-size: 14px;
     transition: 0.3s linear;
+    cursor: pointer;
 
+}
+
+.card__contact {
+    -webkit-animation: my 700ms infinite;
+    -moz-animation: my 700ms infinite;
+    -o-animation: my 700ms infinite;
+    animation: my 700ms infinite;
+    margin-bottom: 20px;
 }
 
 .card__contact button:hover {
     background-color: var(--bd-color);
     font-size: 16px;
-
+    animation: none;
+    box-shadow: 0 0 10px #f93116;
+    background-color: #f93116;
 }
 
 @keyframes ani {
@@ -179,12 +193,15 @@ body {
 }
 
 
-.card__icon-title{
+.card__icon-title {
     position: relative;
 }
 
-.card__icon-facebook::before, .card__icon-instagram::before,.card__icon-tiktok::before,.card__icon-github::before {
-    content: "Facebook";
+.card__icon-facebook::before,
+.card__icon-instagram::before,
+.card__icon-tiktok::before,
+.card__icon-github::before {
+    content: "";
     position: absolute;
     display: flex;
     align-items: center;
@@ -203,12 +220,15 @@ body {
     transform: scale(10%);
 }
 
-.card__icon-facebook::after, .card__icon-instagram::after,.card__icon-tiktok::after,.card__icon-github::after{
+.card__icon-facebook::after,
+.card__icon-instagram::after,
+.card__icon-tiktok::after,
+.card__icon-github::after {
     content: "";
     border-style: solid;
     border-width: 7px 9px;
     position: absolute;
-    border-color: var(--bd-color) transparent transparent  transparent;
+    border-color: var(--bd-color) transparent transparent transparent;
     top: -23.2px;
     left: 20px;
     opacity: 0;
@@ -216,48 +236,128 @@ body {
     transform: scale(10%);
 }
 
-.card__icon-facebook:hover::before{
+.card__icon-facebook:hover::before {
+    content: "Facebook";
     opacity: 1;
     transform: scale(100%);
-} 
+}
 
-.card__icon-tiktok:hover::before{
+.card__icon-tiktok:hover::before {
     opacity: 1;
     transform: scale(100%);
-    
+
     content: "Tiktok";
-} 
-.card__icon-instagram:hover::before{
+}
+
+.card__icon-instagram:hover::before {
     opacity: 1;
     transform: scale(100%);
-    
+
     content: "Instagram";
-} 
-.card__icon-github:hover::before{
+}
+
+.card__icon-github:hover::before {
     opacity: 1;
     transform: scale(100%);
-    
+
     content: "Github";
-} 
+}
 
-.card__icon-facebook:hover::after{
+.card__icon-facebook:hover::after {
     opacity: 1;
     transform: scale(100%);
-    
-} 
 
-.card__icon-tiktok:hover::after{
+}
+
+.card__icon-tiktok:hover::after {
     opacity: 1;
     transform: scale(100%);
-    
-} 
-.card__icon-instagram:hover::after{
+
+}
+
+.card__icon-instagram:hover::after {
     opacity: 1;
     transform: scale(100%);
-    
-} 
-.card__icon-github:hover::after{
+
+}
+
+.card__icon-github:hover::after {
     opacity: 1;
     transform: scale(100%);
-    
+
+}
+
+@-webkit-keyframes glowing {
+    0% {
+        background-color: var(--bd-color);
+        -webkit-box-shadow: 0 0 3px var(--bd-color);
+    }
+
+    50% {
+        background-color: #f93116;
+        -webkit-box-shadow: 0 0 10px #f93116;
+    }
+
+    100% {
+        background-color: var(--bd-color);
+        -webkit-box-shadow: 0 0 3px var(--bd-color);
+    }
+}
+
+@-moz-keyframes glowing {
+    0% {
+        background-color: var(--bd-color);
+        -moz-box-shadow: 0 0 3px var(--bd-color);
+    }
+
+    50% {
+        background-color: #f93116;
+        -moz-box-shadow: 0 0 10px #f93116;
+    }
+
+    100% {
+        background-color: var(--bd-color);
+        -moz-box-shadow: 0 0 3px var(--bd-color);
+    }
+}
+
+@-o-keyframes glowing {
+    0% {
+        background-color: var(--bd-color);
+        box-shadow: 0 0 3px var(--bd-color);
+    }
+
+    50% {
+        background-color: #f93116;
+        box-shadow: 0 0 10px #f93116;
+    }
+
+    100% {
+        background-color: var(--bd-color);
+        box-shadow: 0 0 3px var(--bd-color);
+    }
+}
+
+@keyframes glowing {
+    0% {
+        background-color: var(--bd-color);
+        box-shadow: 0 0 3px var(--bd-color);
+    }
+
+    50% {
+        background-color: #f93116;
+        box-shadow: 0 0 10px #f93116;
+    }
+
+    100% {
+        background-color: var(--bd-color);
+        box-shadow: 0 0 3px var(--bd-color);
+    }
+}
+
+button {
+    -webkit-animation: glowing 1500ms infinite;
+    -moz-animation: glowing 1500ms infinite;
+    -o-animation: glowing 1500ms infinite;
+    animation: glowing 1500ms infinite;
 }
