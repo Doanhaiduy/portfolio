@@ -1,11 +1,11 @@
-:root{
+:root {
     --primary-color: #4daf54;
     --bg-color: #272d40;
     --a: linear-gradient(to right, red, blue);
     --bd-color: rgb(245, 107, 92);
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
@@ -15,7 +15,7 @@
 
 
 
-body{
+body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,13 +25,14 @@ body{
     margin-bottom: 100px;
 
 }
+
 /* 
 .row{
     display: flex;
     flex-wrap: wrap;
 } */
 
-.card{
+.card {
     margin-right: 10px;
     width: 320px;
     height: auto;
@@ -45,12 +46,12 @@ body{
     user-select: none;
 }
 
-.card__img:hover::before{
+.card__img:hover::before {
     width: 100%;
     height: 100%;
     border-radius: 15px;
     border: none;
-    animation: none;    
+    animation: none;
     object-fit: cover;
     background-position: 50%;
     left: 0;
@@ -60,21 +61,21 @@ body{
     /* background-image: url(https://images.pexels.com/photos/3777622/pexels-photo-3777622.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1); */
     background-image: url(https://images.pexels.com/photos/9718154/pexels-photo-9718154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
 }
- 
-.card__img{
+
+.card__img {
     width: 50%;
     border-radius: 50%;
     margin-top: 40px;
     cursor: pointer;
 }
 
-.card__img img{
+.card__img img {
     width: 100%;
     border-radius: 50%;
     object-fit: cover;
 }
 
-.card__img::before{
+.card__img::before {
     content: "";
     position: absolute;
     width: 160px;
@@ -92,22 +93,22 @@ body{
     transition: 0.3s linear;
 }
 
-.card__description{
+.card__description {
     text-align: center;
     margin-top: 30px;
 }
 
-.card__description-job{
+.card__description-job {
     color: var(--bd-color);
     margin-top: 10px;
 }
 
-.card__icon{
+.card__icon {
     margin: 30px 0;
 }
 
-.card__icon i{
-    padding: 5px 10px;
+.card__icon i {
+    padding: 3px 8px;
     font-size: 30px;
     margin: 5px;
     border-radius: 5px;
@@ -115,13 +116,18 @@ body{
     cursor: pointer;
 }
 
-.card__icon i:hover{
-    background: rgba(255,255,255,0.5)
+.instagram {
+    transition: background 0.3s linear;
+
 }
 
-.card__contact button{
+.card__icon i:hover {
+    background: rgba(255, 255, 255, 0.5)
+}
+
+.card__contact button {
     padding: 10px 20px;
-    border: var(--bd-color) 2px solid ;
+    border: var(--bd-color) 2px solid;
     border-radius: 10px;
     background-color: var(--bg-color);
     position: relative;
@@ -131,17 +137,126 @@ body{
 
 }
 
-.card__contact button:hover{
+.card__contact button:hover {
     background-color: var(--bd-color);
     font-size: 16px;
 
 }
 
-@keyframes ani{
-    0%{
+@keyframes ani {
+    0% {
         transform: rotate(0deg);
     }
-    100%{
+
+    100% {
         transform: rotate(360deg);
     }
+}
+
+.card__icon a:hover .facebook {
+    color: #fff;
+    background-color: #1771e6;
+    box-shadow: #4267B2 -2px -2px 5px, #898F9C 2px 2px 5px;
+}
+
+.card__icon a:hover .instagram {
+    color: #ffffff;
+    box-shadow: #5B51D8 -2px -2px 5px, #E1306C 2px 2px 5px;
+    background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+}
+
+.card__icon a:hover .tiktok {
+    color: #340c0c;
+    background-color: #fff;
+    box-shadow: #25F4EE -2px -2px 5px, #FE2C55 2px 2px 5px;
+}
+
+.card__icon a:hover .github {
+    color: #340c0c;
+    box-shadow: #fff -2px -2px 5px, #898F9C 2px 2px 5px;
+    background-color: #fff;
+}
+
+
+.card__icon-title{
+    position: relative;
+}
+
+.card__icon-facebook::before, .card__icon-instagram::before,.card__icon-tiktok::before,.card__icon-github::before {
+    content: "Facebook";
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100%;
+    height: 100%;
+    left: -3px;
+    font-weight: 600;
+    padding: 0 3px;
+    border-radius: 3px;
+    font-size: 12px;
+    top: -45px;
+    background-color: var(--bd-color);
+    opacity: 0;
+    transition: 0.3s linear;
+    transform: scale(10%);
+}
+
+.card__icon-facebook::after, .card__icon-instagram::after,.card__icon-tiktok::after,.card__icon-github::after{
+    content: "";
+    border-style: solid;
+    border-width: 7px 9px;
+    position: absolute;
+    border-color: var(--bd-color) transparent transparent  transparent;
+    top: -23.2px;
+    left: 20px;
+    opacity: 0;
+    transition: 0.3s linear;
+    transform: scale(10%);
+}
+
+.card__icon-facebook:hover::before{
+    opacity: 1;
+    transform: scale(100%);
+} 
+
+.card__icon-tiktok:hover::before{
+    opacity: 1;
+    transform: scale(100%);
+    
+    content: "Tiktok";
+} 
+.card__icon-instagram:hover::before{
+    opacity: 1;
+    transform: scale(100%);
+    
+    content: "Instagram";
+} 
+.card__icon-github:hover::before{
+    opacity: 1;
+    transform: scale(100%);
+    
+    content: "Github";
+} 
+
+.card__icon-facebook:hover::after{
+    opacity: 1;
+    transform: scale(100%);
+    
+} 
+
+.card__icon-tiktok:hover::after{
+    opacity: 1;
+    transform: scale(100%);
+    
+} 
+.card__icon-instagram:hover::after{
+    opacity: 1;
+    transform: scale(100%);
+    
+} 
+.card__icon-github:hover::after{
+    opacity: 1;
+    transform: scale(100%);
+    
 }
